@@ -5,8 +5,9 @@
  * @returns {number} the sum of a and b
  */
 export const sum = (a, b) => {
+  const sum = a+b ; 
   // TODO: implement here
-
+  return sum;
 }
 
 /**
@@ -20,7 +21,12 @@ export const sum = (a, b) => {
  */
 export const map = (arr, callback) => {
   // TODO: implement here
-
+  let $number = []
+  for(let i=0;i<arr.length;i++){
+    const number = callback(arr[i],i)
+    $number.push(number)
+  }
+  return $number;
 }
 
 /**
@@ -33,7 +39,14 @@ export const map = (arr, callback) => {
  */
 export const filter = (arr, callback) => {
   // TODO: implement here
-
+  let boolean = []
+  for(let i=0;i<arr.length;i++){
+    const number = callback(arr[i],i)
+    if(number){
+      boolean.push(arr[i])
+    }
+  }
+  return boolean;
 }
 
 /**
@@ -53,5 +66,10 @@ export const filter = (arr, callback) => {
  */
 export const reduce = (arr, callback, initialValue) => {
   // TODO: implement here
-
+  let sum = initialValue
+  for(let i=0;i<arr.length;i++){
+    sum = callback(sum,arr[i],i)
+  }
+  return sum;
 }
+
